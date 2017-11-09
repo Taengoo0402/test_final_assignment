@@ -16,17 +16,15 @@ def nieuwe_kluis():
     kluizen = []
     if toon_aantal_kluizen_vrij() > 0:
         mogelijk_vrije_kluizen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-        # gooi bezette er uit
+
         for line in lines:
             nr = line.split(';')[0]
             mogelijk_vrije_kluizen.remove(int(nr))
 
         print(mogelijk_vrije_kluizen)
 
-        # bepaal eertse nieuwe kluis
         vrij = min(mogelijk_vrije_kluizen)
 
-        # vraag wachtwoord
         wachtwoord = input('Wat is je wachtwoord?')
 
         f = open('kluizen.txt', 'a')
